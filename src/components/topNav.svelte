@@ -7,7 +7,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/menu">Menu</a></li>
-      <li><a href="/">Locations</a></li>
+      <li><a href="/#">Locations</a></li>
     </ul>
     <button>Order now</button>
   </div>
@@ -38,7 +38,7 @@
   }
 
   img {
-    height: 50px;
+    height: 40px;
     width: auto;
   }
 
@@ -49,7 +49,7 @@
 
   .nav-links ul {
     list-style: none;
-    padding: 200 0 200 0;
+    padding: 0 20px;
     display: flex;
   }
 
@@ -78,5 +78,27 @@
 
   button:hover {
     background-color: #e64a19;
+  }
+
+  @media (max-width: 670px) {
+    .nav-links {
+      margin: 10px 0 0 0;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .nav-links ul {
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin: 0 5px;
+      font-size: 1em;
+    }
+
+    .nav-links button {
+      padding: 5px 15px;
+      font-size: 1em;
+    }
   }
 </style>

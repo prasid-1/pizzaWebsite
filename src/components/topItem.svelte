@@ -99,74 +99,67 @@
   }
 </script>
 
-<div class="topItem">
-  <div class="image-section">
-    <img
-      class="topItem-image"
-      class:changing={isAnimating}
-      src={currentPizza.image}
-      alt={currentPizza.name}
-    />
+<div class="container">
+  <div class="fav">
+    <h2 class="favoritesTitle">OUR FAVOURITES</h2>
   </div>
-  <div class="details">
-    <div class="fav">
-      <h2 class="favoritesTitle">OUR FAVOURITES</h2>
+  <div class="topItem">
+    <div class="image-section">
+      <img
+        class="topItem-image"
+        class:changing={isAnimating}
+        src={currentPizza.image}
+        alt={currentPizza.name}
+      />
     </div>
-    <div class="descriptions">
-      <h1 class="ItemName" class:changing={isAnimating}>
-        {currentPizza.name}
-      </h1>
-      <p class="ItemDescription" class:changing={isAnimating}>
-        {currentPizza.description}
-      </p>
-      <h3 class="ItemPrice" class:changing={isAnimating}>
-        {currentPizza.price}
-      </h3>
-      <div class="buttons">
-        <button class="orderButton" on:click={handleOrder}>Order</button>
-        <button class="viewMoreButton" on:click={handleViewMore}
-          >View More</button
-        >
+    <div class="details">
+      <div class="descriptions">
+        <h1 class="ItemName" class:changing={isAnimating}>
+          {currentPizza.name}
+        </h1>
+        <p class="ItemDescription" class:changing={isAnimating}>
+          {currentPizza.description}
+        </p>
+        <h3 class="ItemPrice" class:changing={isAnimating}>
+          {currentPizza.price}
+        </h3>
+        <div class="buttons">
+          <button class="orderButton" on:click={handleOrder}>Order</button>
+          <button class="viewMoreButton" on:click={handleViewMore}
+            >View More</button
+          >
+        </div>
+      </div>
+      <div class="pizza-selection-lg">
+        {#each pizzaOptions as pizza}
+          <div
+            class="pizza-option"
+            class:active={selectedPizza === pizza.id}
+            on:click={() => selectPizza(pizza.id)}
+            on:keydown={(e) => e.key === "Enter" && selectPizza(pizza.id)}
+            role="button"
+            tabindex="0"
+          >
+            <img src={pizza.image} alt={pizza.alt} />
+          </div>
+        {/each}
       </div>
     </div>
-    <div class="pizza-selection-lg">
-      {#each pizzaOptions as pizza}
-        <div
-          class="pizza-option"
-          class:active={selectedPizza === pizza.id}
-          on:click={() => selectPizza(pizza.id)}
-          on:keydown={(e) => e.key === "Enter" && selectPizza(pizza.id)}
-          role="button"
-          tabindex="0"
-        >
-          <img src={pizza.image} alt={pizza.alt} />
-        </div>
-      {/each}
-    </div>
   </div>
-</div>
-
-<div class="pizza-selection-sm">
-  {#each pizzaOptions as pizza}
-    <div
-      class="pizza-option"
-      class:active={selectedPizza === pizza.id}
-      on:click={() => selectPizza(pizza.id)}
-      on:keydown={(e) => e.key === "Enter" && selectPizza(pizza.id)}
-      role="button"
-      tabindex="0"
-    >
-      <img src={pizza.image} alt={pizza.alt} />
-    </div>
-  {/each}
 </div>
 
 <style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+  }
   .topItem {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 5% 0;
+    margin: 10px 0;
   }
   .details {
     margin: 0 5%;
@@ -181,14 +174,14 @@
     margin-left: 30px;
   }
   .favoritesTitle {
-    font-size: 2em;
+    font-size: 3.5em;
     margin-bottom: 20px;
     margin-left: 10px;
     color: #ff5722;
   }
   .ItemName {
-    font-size: 5em;
-    margin: 20px 0;
+    font-size: 4em;
+    margin: 10px 0;
     color: #333;
     font-weight: bold;
     opacity: 1;
@@ -201,8 +194,8 @@
     transform: translateY(-20px);
   }
   .ItemDescription {
-    font-size: 1.5em;
-    margin: 30px 40% 30px 0;
+    font-size: 1.4em;
+    margin: 10px 40% 10px 0;
     line-height: 1.6;
     color: #666;
     opacity: 1;
@@ -215,9 +208,9 @@
   }
 
   .ItemPrice {
-    font-size: 2em;
+    font-size: 1.5em;
     color: #ff5722;
-    margin: 20px 0;
+    margin: 10px 0;
     font-weight: bold;
     opacity: 1;
     transform: translateY(0);
@@ -238,7 +231,7 @@
     background-color: #ff5722;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 10px 25px;
     cursor: pointer;
     border-radius: 10px;
     font-weight: bold;
@@ -257,7 +250,7 @@
     background-color: transparent;
     color: #000000;
     border: 2px solid #000000;
-    padding: 15px 30px;
+    padding: 10px 25px;
     cursor: pointer;
     border-radius: 10px;
     font-weight: bold;
@@ -273,8 +266,8 @@
 
   .topItem-image {
     display: flex;
-    width: 100%;
-    padding: 20px 0 0 0;
+    width: 120%;
+    padding: 0 0 0 0;
     height: auto;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -298,17 +291,9 @@
     padding: 20px;
   }
 
-  .pizza-selection-sm {
-    display: none;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
-    padding: 20px;
-  }
-
   .pizza-option {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     cursor: pointer;
     border: 4px solid transparent;
@@ -328,7 +313,7 @@
     border-color: #ff5722;
     transform: translateY(-10px) scale(1.1);
     box-shadow: 0 10px 30px rgba(255, 87, 34, 0.3);
-    animation: pulse 2s infinite;
+    animation: pulse 1s infinite;
   }
 
   .pizza-option img {
@@ -365,7 +350,7 @@
     }
 
     .topItem-image {
-      width: 80%;
+      width: 100%;
       margin-bottom: 20px;
     }
 
@@ -394,10 +379,6 @@
       font-size: 1em;
     }
     .pizza-selection-lg {
-      display: none !important;
-    }
-    .pizza-selection-sm {
-      display: flex !important;
       gap: 15px;
       flex-wrap: wrap;
     }

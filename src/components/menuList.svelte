@@ -11,7 +11,7 @@
       : itemData[selectedCategory];
 
   const itemData = {
-    "🍕 Pizza": [
+    "🍕 Pizzas": [
       {
         title: "Item 1",
         description: "Description for Item 1",
@@ -175,17 +175,24 @@
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    align-items: center;
-    font-size: small;
   }
   .items-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     border-radius: 30px;
     background-color: white;
     padding: 20px;
     margin-top: 5%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    padding: 0 10px;
+    border-bottom: 1px solid #333;
   }
 
   .menu-item:hover {
@@ -195,11 +202,10 @@
     transition: all 0.3s ease;
   }
   .menu-title-container {
-    /* background-color: #f9f9f9; */
     margin: 0 70px;
   }
   .menu-title {
-    font-size: 5em;
+    font-size: 3em;
     margin-bottom: 20px;
     color: black;
     padding-left: 0 0;
@@ -215,9 +221,9 @@
   .menu-container {
     display: flex;
     flex-direction: row;
-    padding: 20px;
+    padding: 0;
   }
-  .menu-category-select {
+  /* .menu-category-select {
     display: flex;
     flex-direction: column;
     margin-right: 20px;
@@ -225,7 +231,7 @@
     padding: 10px;
     margin-top: 50px;
     border-radius: 5px;
-  }
+  } */
   hr {
     border: 1px solid #000000;
     height: 1px;
@@ -236,7 +242,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 0px;
-    margin: 0px 0;
+    margin: 0 10px;
     opacity: 1;
     transform: translateY(0);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -246,11 +252,6 @@
   .menu-list.changing {
     opacity: 0;
     transform: translateY(-20px);
-  }
-
-  h1 {
-    font-size: 4em;
-    color: #333;
   }
 
   .menu-category-select {
@@ -283,14 +284,8 @@
       box-shadow 0.15s ease;
   }
 
-  /* .menu-category-select button img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-  } */
-
   .menu-category-select button:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
 
@@ -309,7 +304,7 @@
     }
 
     .menu-title {
-      font-size: 3em;
+      font-size: 2em;
       text-align: center;
       overflow: hidden;
     }
@@ -317,15 +312,13 @@
     .menu-category-buttons {
       display: flex;
       flex-direction: row;
+      justify-content: flex-start;
+      padding-left: 50%;
     }
 
     .menu-category-select {
-      /* position: sticky;
-      top: 50px; */
       padding: 0 0;
       margin: 0 0;
-      /* width: 100%; */
-      /* overflow-x: hidden; */
       flex-direction: column;
       z-index: 10;
     }
@@ -333,7 +326,7 @@
     .menu-category-select button {
       flex: 0 0 auto;
       margin-right: 10px;
-      font-size: 1.2em;
+      font-size: 1em;
     }
 
     .menu-list {

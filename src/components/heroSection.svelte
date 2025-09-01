@@ -65,7 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 5% 0;
+    margin: 0 0;
   }
 
   .hero-content {
@@ -81,7 +81,7 @@
   }
 
   .hero-content h1 {
-    font-size: 5em;
+    font-size: 4.5em;
     color: #333;
   }
 
@@ -104,7 +104,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
   .hero-content button {
@@ -112,6 +112,7 @@
     color: white;
     border: none;
     padding: 15px 30px;
+    margin-top: 20px;
     cursor: pointer;
     border-radius: 10px;
     font-weight: bold;

@@ -36,7 +36,7 @@
   }
   .menu-item {
     /* border: 1px solid #eee; */
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
     height: auto;
   }
@@ -67,11 +67,11 @@
     background-color: #ff5722;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 10px 20px;
     cursor: pointer;
     border-radius: 10px;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
   }
@@ -86,11 +86,11 @@
     background-color: transparent;
     color: #000000;
     border: 2px solid #000000;
-    padding: 15px 30px;
+    padding: 10px 20px;
     cursor: pointer;
     border-radius: 10px;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: all 0.3s ease;
   }
 
@@ -100,7 +100,7 @@
     transform: translateY(-2px);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1300px) {
     .buttons {
       flex-direction: column;
       justify-content: center;
