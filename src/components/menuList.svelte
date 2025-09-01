@@ -176,8 +176,8 @@
     gap: 10px;
     width: 100%;
     align-items: center;
+    font-size: small;
   }
-
   .items-container {
     display: flex;
     flex-direction: column;
@@ -234,7 +234,7 @@
   }
   .menu-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 0px;
     margin: 0px 0;
     opacity: 1;
@@ -272,7 +272,7 @@
     border: none;
     border-radius: 9999px; /* pill shape */
     padding: 10px 16px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 500;
     text-align: center;
     color: #333;
@@ -283,11 +283,11 @@
       box-shadow 0.15s ease;
   }
 
-  .menu-category-select button img {
+  /* .menu-category-select button img {
     width: 28px;
     height: 28px;
     object-fit: contain;
-  }
+  } */
 
   .menu-category-select button:hover {
     transform: scale(1.03);
