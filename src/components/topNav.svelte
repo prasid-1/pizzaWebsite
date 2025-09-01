@@ -4,9 +4,9 @@
   <a href="/"><img src="src/assets/logoMain.png" alt="Logo" /></a>
   <div class="nav-links">
     <ul>
-      <li><a href="/about">Home</a></li>
-      <li><a href="/services">Menu</a></li>
-      <li><a href="/contact">Locations</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/">Menu</a></li>
+      <li><a href="/">Locations</a></li>
     </ul>
     <button>Order now</button>
   </div>

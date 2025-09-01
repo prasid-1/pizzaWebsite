@@ -27,8 +27,8 @@
       </div>
     </div>
     <div class="hero-actions">
-      <button>Menu</button>
-      <button>Top Deals</button>
+      <button class="menu-button">Menu</button>
+      <button class="top-deals-button">Top Deals</button>
     </div>
   </div>
   <img
@@ -104,7 +104,8 @@
     border-radius: 10px;
     font-weight: bold;
     font-size: 1.2em;
-    margin: 30px 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
   }
 
   .hero-details .number {
@@ -119,7 +120,9 @@
   }
 
   .hero-content button:hover {
-    background-color: #e64a19;
+    background-color: #e64919;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
   }
 
   .hero-image {

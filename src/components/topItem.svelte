@@ -107,20 +107,6 @@
       src={currentPizza.image}
       alt={currentPizza.name}
     />
-    <div class="pizza-selection-lg">
-      {#each pizzaOptions as pizza}
-        <div
-          class="pizza-option"
-          class:active={selectedPizza === pizza.id}
-          on:click={() => selectPizza(pizza.id)}
-          on:keydown={(e) => e.key === "Enter" && selectPizza(pizza.id)}
-          role="button"
-          tabindex="0"
-        >
-          <img src={pizza.image} alt={pizza.alt} />
-        </div>
-      {/each}
-    </div>
   </div>
   <div class="details">
     <div class="fav">
@@ -142,6 +128,20 @@
           >View More</button
         >
       </div>
+    </div>
+    <div class="pizza-selection-lg">
+      {#each pizzaOptions as pizza}
+        <div
+          class="pizza-option"
+          class:active={selectedPizza === pizza.id}
+          on:click={() => selectPizza(pizza.id)}
+          on:keydown={(e) => e.key === "Enter" && selectPizza(pizza.id)}
+          role="button"
+          tabindex="0"
+        >
+          <img src={pizza.image} alt={pizza.alt} />
+        </div>
+      {/each}
     </div>
   </div>
 </div>

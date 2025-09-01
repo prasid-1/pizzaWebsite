@@ -1,9 +1,15 @@
-<script>
+<script lang="ts">
   import TopNav from "./components/topNav.svelte";
-  import HeroSection from "./components/heroSection.svelte";
-  import TopItem from "./components/topItem.svelte";
+  import Home from "./Home.svelte";
+
+  import { Router } from "@mateothegreat/svelte5-router";
+  const routes = [
+    {
+      path: "/",
+      component: Home,
+    },
+  ];
 </script>
 
 <TopNav />
-<HeroSection />
-<TopItem />
+<Router {routes} />
