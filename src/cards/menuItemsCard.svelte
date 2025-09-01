@@ -99,4 +99,11 @@
     color: white;
     transform: translateY(-2px);
   }
+
+  @media (max-width: 600px) {
+    .buttons {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 </style>
