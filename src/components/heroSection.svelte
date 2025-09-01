@@ -1,7 +1,14 @@
-<script>
+<script lang="ts">
   function callMenu() {
     addEventListener("click", () => {
       window.location.href = "/menu";
+    });
+  }
+  async function autoscroll() {
+    const dealContainer = document.querySelector(".deals-title") as HTMLElement;
+    window.scrollTo({
+      top: dealContainer.offsetTop,
+      behavior: "smooth",
     });
   }
 </script>
@@ -33,7 +40,7 @@
     </div>
     <div class="hero-actions">
       <button on:click={callMenu} class="menu-button">Menu</button>
-      <button class="top-deals-button">Top Deals</button>
+      <button on:click={autoscroll} class="top-deals-button">Top Deals</button>
     </div>
   </div>
   <img

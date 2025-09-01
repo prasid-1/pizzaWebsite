@@ -47,7 +47,7 @@
   });
 </script>
 
-<h1>Deals</h1>
+<h1 class="deals-title">Deals</h1>
 <div class="swiper">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
