@@ -5,7 +5,7 @@
   <div class="nav-links">
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/">Menu</a></li>
+      <li><a href="/menu">Menu</a></li>
       <li><a href="/">Locations</a></li>
     </ul>
     <button>Order now</button>
