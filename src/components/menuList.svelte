@@ -11,7 +11,7 @@
       : itemData[selectedCategory];
 
   const itemData = {
-    Pizza: [
+    "🍕 Pizza": [
       {
         title: "Item 1",
         description: "Description for Item 1",
@@ -61,7 +61,7 @@
         titleD: "PIZZA8",
       },
     ],
-    Appetizers: [
+    "🍽️ Appetizers": [
       {
         title: "Item 1",
         description: "Description for Item 1",
@@ -87,7 +87,7 @@
         titleD: "Appetizers4",
       },
     ],
-    Beverages: [
+    "🍹 Beverages": [
       {
         title: "Item 1",
         description: "Description for Item 1",
@@ -135,11 +135,11 @@
         <button
           class:selected={selectedCategory === category}
           on:click={() => selectCategory(category)}
-          ><img
+          ><!---<img
             class="Category-pasta-button-image"
             src="/path/to/pasta-icon.png"
             alt=""
-          />
+          />-->
           {category}
         </button>
       {/each}
@@ -170,7 +170,7 @@
 <style>
   .menu-category-buttons {
     position: sticky;
-    top: 50px;
+    top: 60px;
     display: flex;
     flex-direction: column;
     gap: 10px;

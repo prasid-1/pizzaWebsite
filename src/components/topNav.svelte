@@ -1,4 +1,5 @@
-<script></script>
+<script>
+</script>
 
 <div class="navContainer">
   <a href="/"><img src="src/assets/logoMain.png" alt="Logo" /></a>
@@ -24,11 +25,16 @@
 
 <style>
   .navContainer {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     /* background-color: #ffffff; */
-    padding: 0 0;
+    padding: 5px 0;
+    background-color: white;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
   }
 
   img {
