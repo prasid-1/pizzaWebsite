@@ -14,7 +14,6 @@
       component: Menu,
     },
   ];
-  // hululululiu
 </script>
 
 <TopNav />
