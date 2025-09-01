@@ -1,4 +1,9 @@
 <script>
+  function callMenu() {
+    addEventListener("click", () => {
+      window.location.href = "/menu";
+    });
+  }
 </script>
 
 <div class="hero-section">
@@ -27,7 +32,7 @@
       </div>
     </div>
     <div class="hero-actions">
-      <button class="menu-button">Menu</button>
+      <button on:click={callMenu} class="menu-button">Menu</button>
       <button class="top-deals-button">Top Deals</button>
     </div>
   </div>
