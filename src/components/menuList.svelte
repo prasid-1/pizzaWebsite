@@ -2,11 +2,11 @@
   import App from "../App.svelte";
   import MenuItem from "../cards/menuItemsCard.svelte";
 
-  let selectedCategory = "All";
+  let selectedCategory = "All Items";
   let isAnimating = false;
 
   $: itemsToShow =
-    selectedCategory === "All"
+    selectedCategory === "All Items"
       ? Object.values(itemData).flat()
       : itemData[selectedCategory];
 
@@ -128,8 +128,8 @@
   <div class="menu-category-select">
     <div class="menu-category-buttons">
       <button
-        class:selected={selectedCategory === "All"}
-        on:click={() => selectCategory("All")}>All</button
+        class:selected={selectedCategory === "All Items"}
+        on:click={() => selectCategory("All Items")}>All Items</button
       >
       {#each Object.keys(itemData) as category}
         <button
@@ -195,13 +195,14 @@
     transition: all 0.3s ease;
   }
   .menu-title-container {
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
+    margin: 0 70px;
   }
   .menu-title {
     font-size: 5em;
     margin-bottom: 20px;
     color: black;
-    padding-left: 10%;
+    padding-left: 0 0;
     font-weight: bold;
     opacity: 1;
     transform: translateY(0);
@@ -215,7 +216,6 @@
     display: flex;
     flex-direction: row;
     padding: 20px;
-    background-color: #f9f9f9;
   }
   .menu-category-select {
     display: flex;
@@ -226,6 +226,12 @@
     margin-top: 50px;
     border-radius: 5px;
   }
+  hr {
+    border: 1px solid #000000;
+    height: 1px;
+    background-color: #eee;
+    margin: 20px 0;
+  }
   .menu-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -234,6 +240,7 @@
     opacity: 1;
     transform: translateY(0);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
   }
 
   .menu-list.changing {
@@ -252,6 +259,7 @@
     gap: 30px;
     width: 20%;
     align-items: center;
+    background: none;
   }
 
   .menu-category-select button {

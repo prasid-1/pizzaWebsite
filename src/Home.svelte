@@ -4,6 +4,12 @@
   import Carousel from "./components/carousel.svelte";
 </script>
 
-<HeroSection />
-<TopItem />
-<Carousel />
+<div class="hero-section-container">
+  <HeroSection />
+
+  <TopItem />
+  <Carousel />
+</div>
+
+<style>
+</style>

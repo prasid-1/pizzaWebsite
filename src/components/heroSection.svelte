@@ -5,7 +5,7 @@
   <div class="hero-content">
     <div class="hero-text">
       <h1>
-        YOUR PIZZA, YOUR <br /> <span class="highlight">66,402</span> Ways.
+        YOUR PIZZA, YOUR <br /> <span class="highlight">66,402</span> WAYS.
       </h1>
     </div>
     <div class="hero-details">
