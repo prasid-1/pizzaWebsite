@@ -266,7 +266,7 @@
 
   .topItem-image {
     display: flex;
-    width: 120%;
+    width: 100%;
     padding: 0 0 0 0;
     height: auto;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);

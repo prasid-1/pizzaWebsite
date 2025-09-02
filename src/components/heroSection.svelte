@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "@fontsource/manrope";
   function callMenu() {
     addEventListener("click", () => {
       window.location.href = "/menu";
@@ -13,11 +14,18 @@
   }
 </script>
 
+<svelte:head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+    rel="stylesheet"
+  />
+</svelte:head>
+
 <div class="hero-section">
   <div class="hero-content">
     <div class="hero-text">
       <h1>
-        YOUR PIZZA, YOUR <br /> <span class="highlight">66,402</span> WAYS.
+        Your Pizza, Your <br /> <span class="highlight">66,402</span> Ways.
       </h1>
     </div>
     <div class="hero-details">
@@ -65,7 +73,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 0;
+    margin: 0 30px;
+  }
+
+  .hero-text {
+    /* padding-left: 20%; */
+    width: 120%;
   }
 
   .hero-content {
@@ -81,19 +94,21 @@
   }
 
   .hero-content h1 {
-    font-size: 4.5em;
+    font-family: "Manrope", sans-serif;
+    font-size: 5em;
     color: #333;
   }
 
   .hero-details {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin: 20px 0;
+    justify-content: flex-start;
+    width: 120%;
+    margin: 0 0;
+    gap: 40px;
   }
 
   .hero-details div {
-    text-align: center;
+    text-align: left;
   }
 
   .hero-details .sauces,
@@ -104,7 +119,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.3em;
+    /* font-size: 2.5em; */
   }
 
   .hero-content button {
@@ -115,6 +130,7 @@
     margin-top: 20px;
     cursor: pointer;
     border-radius: 10px;
+    font-family: "Manrope", sans-serif;
     font-weight: bold;
     font-size: 1.2em;
     transition: all 0.3s ease;
@@ -122,13 +138,16 @@
   }
 
   .hero-details .number {
-    padding: 0 15px;
+    font-family: "Manrope", sans-serif;
     font-size: 3em;
+    font-weight: bold;
     color: rgb(218, 184, 35);
   }
 
   .hero-details .label {
-    font-size: 1.2em;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
     color: #242424;
   }
 
@@ -138,11 +157,18 @@
     box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
   }
 
+  .hero-actions {
+    display: flex;
+    justify-content: flex-start;
+    width: 120%;
+    padding: 20px 0 0 40%;
+    gap: 20px;
+  }
+
   .hero-image {
     display: flex;
     width: 50%;
     padding: 0 0;
-    height: auto;
   }
 
   @media (max-width: 768px) {
