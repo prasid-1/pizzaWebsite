@@ -2,6 +2,7 @@
   import TopNav from "./components/topNav.svelte";
   import Home from "./Home.svelte";
   import Menu from "./menu.svelte";
+  import ViewMore from "./components/viewMore.svelte";
 
   import { Router } from "@mateothegreat/svelte5-router";
   const routes = [
@@ -12,6 +13,10 @@
     {
       path: "/menu",
       component: Menu,
+    },
+    {
+      path: "/view-more",
+      component: ViewMore,
     },
   ];
 </script>
