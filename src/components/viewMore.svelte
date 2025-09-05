@@ -1,4 +1,7 @@
 <script>
+  import { selection } from "../globalData/idHandler";
+  import { onMount } from "svelte";
+
   const pizzaData = {
     chicken: {
       name: "Chicken Pizza",
@@ -37,11 +40,18 @@
     },
   };
 
+  onMount(() => {
+    selectPizza($selection);
+  });
+
   const pizzaOptions = Object.keys(pizzaData);
+  console.log("Pizza Options:", pizzaOptions);
 
   let isAnimating = false;
 
-  let selectedPizza = "chicken";
+  let selectedPizza = $selection; // default selection
+
+  console.log("Initial selectedPizza:", $selection);
   let scrollContainer;
 
   // Detect center pizza while scrolling
@@ -142,8 +152,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 350px;
-    height: 650px;
+    width: 450px;
+    height: 700px;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -158,8 +168,8 @@
   }
 
   .pizza-option {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     flex-shrink: 0;
     margin: 20px 0;
     border-radius: 50%;
@@ -252,7 +262,7 @@
     .pizza-selection {
       flex-direction: row; /* horizontal scroll */
       width: 100%;
-      height: auto;
+      height: 250px;
       overflow-x: scroll;
       overflow-y: hidden;
       scroll-snap-type: x mandatory;
@@ -260,8 +270,8 @@
     }
 
     .pizza-option {
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      height: 200px;
       margin: 0 15px;
       scroll-snap-align: center;
     }

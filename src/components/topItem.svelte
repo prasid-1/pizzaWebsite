@@ -1,4 +1,7 @@
 <script>
+  import { goto } from "@mateothegreat/svelte5-router";
+  import { selection } from "../globalData/idHandler";
+
   const pizzaData = {
     chicken: {
       name: "Chicken Pizza",
@@ -68,6 +71,7 @@
 
   // Reactive variables
   let selectedPizza = "chicken";
+  $: selection.set(selectedPizza);
   let isAnimating = false;
 
   // Reactive statements for current pizza data
@@ -95,7 +99,7 @@
 
   // Handle view more button click
   function handleViewMore() {
-    alert(`Viewing more details for ${currentPizza.name}...`);
+    goto(`/view-more`);
   }
 </script>
 
@@ -125,11 +129,8 @@
         </h3>
         <div class="buttons">
           <button class="orderButton" on:click={handleOrder}>Order</button>
-          <button
-            class="viewMoreButton"
-            on:click={() => {
-              window.location.href = "/view-more";
-            }}>View More</button
+          <button class="viewMoreButton" on:click={handleViewMore}
+            >View More</button
           >
         </div>
       </div>
