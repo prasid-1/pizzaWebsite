@@ -125,8 +125,11 @@
         </h3>
         <div class="buttons">
           <button class="orderButton" on:click={handleOrder}>Order</button>
-          <button class="viewMoreButton" on:click={handleViewMore}
-            >View More</button
+          <button
+            class="viewMoreButton"
+            on:click={() => {
+              window.location.href = "/view-more";
+            }}>View More</button
           >
         </div>
       </div>

@@ -23,8 +23,11 @@
     <button class="orderButton" on:click={() => handleOrder(titleD)}
       >Order</button
     >
-    <button class="viewMoreButton" on:click={() => handleViewMore(titleD)}
-      >View More</button
+    <button
+      class="viewMoreButton"
+      on:click={() => {
+        window.location.href = "/view-more";
+      }}>View More</button
     >
   </div>
 </div>
