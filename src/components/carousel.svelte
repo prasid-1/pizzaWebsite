@@ -133,4 +133,23 @@
     background: #ff5722;
     opacity: 1;
   }
+
+  @media (max-width: 1300px) {
+    h1 {
+      font-size: 50px;
+      text-align: center;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+      padding: 20px 0;
+    }
+
+    .swiper-slide {
+      width: 300px;
+      height: 400px;
+      background-size: contain;
+    }
+  }
 </style>
