@@ -78,7 +78,7 @@
     padding: 16px;
     width: 500px;
     height: 600px;
-    background-image: url("src/assets/Frame 7.png");
+    background-image: url("src/assets/Pizza Poster.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
