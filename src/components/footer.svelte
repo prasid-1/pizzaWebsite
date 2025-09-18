@@ -13,6 +13,7 @@
 
 <style>
   .footer {
+    margin-top: 40px;
     background-color: #797878;
     padding: 1rem 0;
     width: 100%;
