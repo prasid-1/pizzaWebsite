@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <!-- Colors -->
+    <style>
+      .g{stroke:#b9bcc3;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .w{stroke:#ffffff;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.7}
+      .gf{fill:#b9bcc3;opacity:.25}
+      .wf{fill:#ffffff;opacity:.25}
+    </style>
+
+    <!-- Pizza slice -->
+    <symbol id="pizza" viewBox="0 0 60 60">
+      <path class="g" d="M7 8c22 2 37 9 44 20L30 55 7 8z"/>
+      <path class="g" d="M12 18c9 1 17 3 23 6"/>
+      <circle class="g" cx="20" cy="28" r="3"/>
+      <circle class="g" cx="31" cy="34" r="3"/>
+      <circle class="g" cx="25" cy="41" r="3"/>
+      <path class="w" d="M10 13c16 1 30 6 36 14"/>
+    </symbol>
+
+    <!-- Sauce bottle -->
+    <symbol id="sauce" viewBox="0 0 50 60">
+      <path class="g" d="M18 7h14l-1 6H19l-1-6z"/>
+      <path class="g" d="M20 13h10v8H20z"/>
+      <path class="g" d="M14 22c0-2 2-3 11-3s11 1 11 3v22c0 7-5 12-11 12s-11-5-11-12V22z"/>
+      <path class="w" d="M24 22v26"/>
+      <circle class="g" cx="25" cy="35" r="5"/>
+    </symbol>
+
+    <!-- Soda cup -->
+    <symbol id="soda" viewBox="0 0 55 60">
+      <path class="g" d="M8 14h39"/>
+      <path class="g" d="M12 14l6 40c1 4 18 4 19 0l6-40H12z"/>
+      <path class="g" d="M26 6c6-3 12 0 16 2"/>
+      <path class="g" d="M25 6l-1 6"/>
+      <path class="w" d="M19 24c5 1 17 1 22 0"/>
+      <path class="w" d="M21 34c4 1 14 1 18 0"/>
+    </symbol>
+
+    <!-- Chef hat -->
+    <symbol id="hat" viewBox="0 0 60 50">
+      <path class="g" d="M12 31h36v11H12z"/>
+      <path class="g" d="M18 31c-9-8-1-17 7-14 4-9 18-7 20 2 9 1 9 12 1 12"/>
+      <path class="w" d="M18 36h24"/>
+    </symbol>
+
+    <!-- Basil leaf -->
+    <symbol id="leaf" viewBox="0 0 60 60">
+      <path class="g" d="M10 30c12-18 28-18 40 0-12 18-28 18-40 0z"/>
+      <path class="g" d="M10 30c10-2 30-2 40 0"/>
+      <path class="w" d="M30 18c0 8 0 16 0 24"/>
+    </symbol>
+
+    <!-- Pattern unit -->
+    <pattern id="bg" width="200" height="200" patternUnits="userSpaceOnUse">
+      <rect width="200" height="200" fill="none"/>
+      <!-- row 1 -->
+      <use href="#pizza" x="10" y="8" transform="rotate(-12 40 38)" />
+      <use href="#soda"  x="100" y="2" transform="rotate(18 127 32)"/>
+      <use href="#sauce" x="150" y="12" transform="rotate(-28 175 42)"/>
+      <!-- row 2 -->
+      <use href="#hat"   x="6" y="90" transform="rotate(22 36 115)"/>
+      <use href="#leaf"  x="82" y="78" transform="rotate(-7 112 108)"/>
+      <use href="#pizza" x="150" y="76" transform="rotate(33 180 106)"/>
+      <!-- row 3 -->
+      <use href="#soda"  x="12" y="150" transform="rotate(-20 39 180)"/>
+      <use href="#sauce" x="90" y="142" transform="rotate(12 115 172)"/>
+      <use href="#leaf"  x="152" y="148" transform="rotate(-36 182 178)"/>
+      <!-- subtle fills sprinkled beneath for texture -->
+      <circle class="gf" cx="30" cy="30" r="10"/>
+      <circle class="wf" cx="130" cy="60" r="8"/>
+      <circle class="gf" cx="60" cy="140" r="7"/>
+      <circle class="wf" cx="170" cy="110" r="9"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+</svg>

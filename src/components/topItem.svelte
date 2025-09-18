@@ -270,7 +270,7 @@
 
   .topItem-image {
     display: flex;
-    width: 100%;
+    width: 80%;
     padding: 0 0 0 0;
     height: auto;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -347,28 +347,34 @@
     background: rgba(255, 87, 34, 0.1);
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 768px) {
     .topItem {
       flex-direction: column;
       text-align: center;
     }
 
     .topItem-image {
-      width: 100%;
+      width: 80%;
       margin-bottom: 20px;
+      margin-left: 0;
+    }
+
+    .details {
+      margin-left: -5px;
+      padding: 0 10px;
     }
 
     .ItemName {
-      font-size: 3em;
+      font-size: 2em;
     }
 
     .ItemDescription {
-      font-size: 1.2em;
-      margin: 20px 0;
+      font-size: 1em;
+      margin: 0 0;
     }
 
     .ItemPrice {
-      font-size: 1.5em;
+      font-size: 1em;
     }
 
     .buttons {
@@ -383,8 +389,10 @@
       font-size: 1em;
     }
     .pizza-selection-lg {
-      gap: 15px;
+      gap: 10px;
       flex-wrap: wrap;
+      width: 100%;
+      margin-left: -10px;
     }
 
     .pizza-option {

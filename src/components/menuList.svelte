@@ -192,7 +192,7 @@
     flex-direction: column;
     margin: 0 10px;
     padding: 0 10px;
-    border-bottom: 1px solid #333;
+    /* border-bottom: 1px solid #333; */
   }
 
   .menu-item:hover {

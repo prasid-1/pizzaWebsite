@@ -102,13 +102,10 @@
   .hero-details {
     display: flex;
     justify-content: flex-start;
-    width: 120%;
+    width: 100%;
+    padding: 0 10% 0 0;
     margin: 0 0;
     gap: 40px;
-  }
-
-  .hero-details div {
-    text-align: left;
   }
 
   .hero-details .sauces,
@@ -167,41 +164,78 @@
 
   .hero-image {
     display: flex;
-    width: 50%;
+    width: 40%;
     padding: 0 0;
   }
 
   @media (max-width: 768px) {
     .hero-section {
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      margin: 20px 0 20px 0;
+      background-image: url("src/assets/pizzaHero.png");
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10%;
+      background-blend-mode: darken;
+      background-size: 120%;
+      background-position: 50% 60%;
+      background-repeat: no-repeat;
+      height: 500px;
     }
 
     .hero-image {
-      width: 80%;
+      width: 0%;
       margin-top: 20px;
+      margin-left: 10px;
+    }
+
+    .hero-content {
+      margin: 0 0;
+      width: 50%;
+      padding: 0 0;
+      align-items: center;
     }
 
     .hero-content h1 {
-      font-size: 2.5em;
+      font-size: 2em;
+      margin-left: 0;
+      color: white;
     }
 
     .hero-details {
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: center;
       gap: 10px;
+      margin-left: 0;
+      padding: 0 0 0 0;
+      width: 100%;
     }
 
     .hero-details .number {
       font-size: 2em;
+      /* color: white; */
     }
 
     .hero-details .label {
       font-size: 1em;
+      color: white;
     }
 
     .hero-content button {
       width: 100%;
-      margin: 10px 0;
+      margin: 0 0;
+      font-size: 1em;
+      padding: 10px 15px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 20px 0 0 0;
+      gap: 20px;
     }
   }
 </style>

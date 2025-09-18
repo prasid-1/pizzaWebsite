@@ -1,9 +1,10 @@
 <script lang="ts">
   import TopNav from "./components/topNav.svelte";
-  import Home from "./Home.svelte";
-  import Menu from "./menu.svelte";
+  import Home from "./Home/Home.svelte";
+  import Menu from "./Menu/menu.svelte";
   import ViewMore from "./components/viewMore.svelte";
   import Chatbot from "./components/chatbot.svelte";
+  import Footer from "./components/footer.svelte";
 
   import { Router } from "@mateothegreat/svelte5-router";
   const routes = [
@@ -25,3 +26,4 @@
 <TopNav />
 <Chatbot />
 <Router {routes} />
+<Footer />
