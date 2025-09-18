@@ -9,7 +9,7 @@
       <li><a href="/menu">Menu</a></li>
       <li><a href="/#">Locations</a></li>
     </ul>
-    <button>Order now</button>
+    <button on:click={() => (window.location.href = "/menu")}>Order now</button>
   </div>
 </div>
 

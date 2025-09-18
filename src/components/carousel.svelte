@@ -70,7 +70,7 @@
     text-align: center;
   }
   .swiper {
-    width: 1200px;
+    width: 60%;
     height: auto;
     padding: 20px 0;
   }
@@ -135,7 +135,7 @@
     opacity: 1;
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 720px) {
     h1 {
       font-size: 50px;
       text-align: center;
@@ -143,14 +143,14 @@
 
     .swiper {
       width: 100%;
-      height: auto;
+      height: 50vw;
       padding: 20px 0;
       /* margin-left: -45px; */
     }
 
     .swiper-slide {
-      width: 350px;
-      height: 300px;
+      width: 100%;
+      height: 50vw;
       background-size: cover;
       margin-left: -25px;
     }

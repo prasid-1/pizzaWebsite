@@ -7,8 +7,9 @@
   }
   async function autoscroll() {
     const dealContainer = document.querySelector(".deals-title") as HTMLElement;
+    const margin = 50;
     window.scrollTo({
-      top: dealContainer.offsetTop,
+      top: dealContainer.offsetTop - margin,
       behavior: "smooth",
     });
   }
@@ -176,13 +177,13 @@
       text-align: center;
       margin: 20px 0 20px 0;
       background-image: url("src/assets/pizzaHero.png");
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 10%;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
       background-blend-mode: darken;
-      background-size: 120%;
+      background-size: 100%;
       background-position: 50% 60%;
       background-repeat: no-repeat;
-      height: 500px;
+      height: 100vw;
     }
 
     .hero-image {

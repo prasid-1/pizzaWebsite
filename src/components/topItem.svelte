@@ -347,7 +347,7 @@
     background: rgba(255, 87, 34, 0.1);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1080px) {
     .topItem {
       flex-direction: column;
       text-align: center;
