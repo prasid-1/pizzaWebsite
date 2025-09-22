@@ -1,6 +1,7 @@
 <script lang="ts">
   import "@fontsource/manrope";
   import { onMount } from "svelte";
+  import Counter from "../cards/counter.svelte";
 
   let isaminating = false;
 
@@ -57,9 +58,9 @@
   }
 
   // Run when mounted (example: count to 66,402)
-  onMount(() => {
-    countTo(66_402, 1500);
-  });
+  // onMount(() => {
+  //   countTo(66_402, 1500);
+  // });
 </script>
 
 <svelte:head>
@@ -75,10 +76,15 @@
       <h1>
         Your Pizza, Your <br />
         <!-- {#if isaminating} -->
-        <span class="highlight" bind:this={highlightEl}
-          >{count.toLocaleString()}</span
-        >
+        <!-- 
+          >{countTo(66_402, 1500, highlightEl)} --><span
+          class="highlight"
+          bind:this={highlightEl}
+          ><Counter target={66_402} duration={1500} />
+        </span>
+
         <!-- {:else}
+         count.toLocaleString()
           <span class="highlight">66,402</span> -->
         <!-- {/if} -->
         <span class="spacing">66,402</span> Ways.
@@ -86,19 +92,27 @@
     </div>
     <div class="hero-details">
       <div class="sauces">
-        <li class="number">6</li>
+        <li class="number">
+          <Counter target={5} duration={1000} color="#dab823" />
+        </li>
         <li class="label">Sauces</li>
       </div>
       <div class="cheeses">
-        <li class="number">6</li>
+        <li class="number">
+          <Counter target={6} duration={1000} color="#dab823" />
+        </li>
         <li class="label">Cheeses</li>
       </div>
       <div class="toppings">
-        <li class="number">34</li>
+        <li class="number">
+          <Counter target={34} duration={1000} color="#dab823" />
+        </li>
         <li class="label">Toppings</li>
       </div>
       <div class="crusts">
-        <li class="number">3</li>
+        <li class="number">
+          <Counter target={3} duration={1000} color="#dab823" />
+        </li>
         <li class="label">Crusts</li>
       </div>
     </div>
