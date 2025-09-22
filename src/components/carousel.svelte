@@ -1,14 +1,27 @@
 <script>
   import Swiper from "swiper";
-  import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+  import {
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+  } from "swiper/modules";
   import "swiper/css";
   import "swiper/css/effect-coverflow";
   import "swiper/css/pagination";
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
+
+  const slideDuration = 3000; // milliseconds
+  const numberOfSlides = 3; // Update if the number of slides changes
+
   onMount(() => {
     const swiper = new Swiper(".swiper", {
-      modules: [EffectCoverflow, Pagination],
+      modules: [EffectCoverflow, Pagination, Autoplay, Navigation],
       effect: "coverflow",
+      autoplay: {
+        delay: slideDuration,
+        disableOnInteraction: false,
+      },
       grabCursor: true,
       centeredSlides: true,
       slideToClickedSlide: true,
@@ -26,6 +39,10 @@
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
       breakpoints: {
         480: {
@@ -204,6 +221,7 @@
     font-weight: bold;
     text-align: center;
     margin-bottom: 1.5rem;
+    color: #ff5722;
   }
   .swiper {
     width: 100%;

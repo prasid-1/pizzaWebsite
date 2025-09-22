@@ -1,6 +1,7 @@
 <script>
   import { goto } from "@mateothegreat/svelte5-router";
   import { selection } from "../globalData/idHandler";
+  import { onMount, onDestroy } from "svelte";
 
   const pizzaData = {
     chicken: {
@@ -73,9 +74,38 @@
   let selectedPizza = "chicken";
   $: selection.set(selectedPizza);
   let isAnimating = false;
+  let clicked = false;
 
   // Reactive statements for current pizza data
   $: currentPizza = pizzaData[selectedPizza];
+
+  let currentSlideIndex = pizzaOptions.indexOf(
+    pizzaOptions.find((pizza) => pizza.id === selectedPizza)
+  );
+  let intervalId;
+  const slideDuration = 6000; // milliseconds
+
+  onMount(() => {
+    intervalId = setInterval(() => {
+      if (clicked) {
+        setTimeout(() => {
+          clicked = false;
+        }, 2000);
+        return;
+      }
+      currentSlideIndex = (currentSlideIndex + 1) % pizzaOptions.length;
+      isAnimating = true;
+      setTimeout(() => {
+        selectedPizza = pizzaOptions[currentSlideIndex].id;
+        selection.set(selectedPizza);
+        isAnimating = false;
+      }, 300);
+    }, slideDuration);
+  });
+
+  onDestroy(() => {
+    clearInterval(intervalId);
+  });
 
   // Function to handle pizza selection
   function selectPizza(pizzaId) {
@@ -86,6 +116,10 @@
     // Small delay to show animation, then update
     setTimeout(() => {
       selectedPizza = pizzaId;
+      currentSlideIndex = pizzaOptions.findIndex(
+        (pizza) => pizza.id === pizzaId
+      );
+      clicked = true;
       setTimeout(() => {
         isAnimating = false;
       }, 300);
@@ -178,9 +212,13 @@
     margin-left: 30px;
   }
   .favoritesTitle {
-    font-size: 3.5em;
+    /* font-size: 3.5em;
     margin-bottom: 20px;
-    margin-left: 10px;
+    margin-left: 10px; */
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
     color: #ff5722;
   }
   .ItemName {
