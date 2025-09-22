@@ -82,6 +82,7 @@
   }
 
   function selectPizza(pizzaId) {
+    isAnimating = true;
     selectedPizza = pizzaId; // update details immediately
 
     const el = document.getElementById(`pizza-${pizzaId}`);
@@ -92,7 +93,6 @@
         inline: window.innerWidth <= 768 ? "center" : "nearest",
       });
     }
-    isAnimating = true;
 
     // Small delay to show animation, then update
     setTimeout(() => {

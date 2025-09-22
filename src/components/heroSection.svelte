@@ -1,5 +1,9 @@
 <script lang="ts">
   import "@fontsource/manrope";
+  import { onMount } from "svelte";
+
+  let isaminating = false;
+
   function callMenu() {
     addEventListener("click", () => {
       window.location.href = "/menu";
@@ -13,6 +17,49 @@
       behavior: "smooth",
     });
   }
+  // function countTo(target: number) {
+  //   let current = 0;
+  //   const increment = Math.ceil(target / 50); // Adjust the divisor to change speed
+  //   const interval = setInterval(() => {
+  //     current += increment;
+  //     if (current >= target) {
+  //       current = target;
+  //       clearInterval(interval);
+  //     }
+  //     document.querySelector(".highlight")!.textContent =
+  //       current.toLocaleString();
+  //   }, 50); // Adjust the interval time to change speed
+  // }
+  let count = 0;
+  let highlightEl: HTMLElement;
+
+  function countTo(target: number, duration = 2000) {
+    const start = 0;
+    const startTime = performance.now();
+
+    function update(currentTime: number) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1); // 0 → 1
+      const eased = easeOutCubic(progress);
+
+      count = Math.floor(start + (target - start) * eased);
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  function easeOutCubic(t: number): number {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  // Run when mounted (example: count to 66,402)
+  onMount(() => {
+    countTo(66_402, 1500);
+  });
 </script>
 
 <svelte:head>
@@ -26,7 +73,15 @@
   <div class="hero-content">
     <div class="hero-text">
       <h1>
-        Your Pizza, Your <br /> <span class="highlight">66,402</span> Ways.
+        Your Pizza, Your <br />
+        <!-- {#if isaminating} -->
+        <span class="highlight" bind:this={highlightEl}
+          >{count.toLocaleString()}</span
+        >
+        <!-- {:else}
+          <span class="highlight">66,402</span> -->
+        <!-- {/if} -->
+        <span class="spacing">66,402</span> Ways.
       </h1>
     </div>
     <div class="hero-details">
@@ -90,7 +145,15 @@
     margin-left: 9%;
   }
 
+  .spacing {
+    visibility: hidden;
+  }
+
   .highlight {
+    font-family: "Manrope", sans-serif;
+    position: absolute;
+    width: fit-content;
+    overflow: hidden;
     color: #ff5722;
   }
 

@@ -303,17 +303,16 @@
       flex-direction: column;
     }
 
-    .menu-title {
-      font-size: 2em;
-      text-align: center;
-      overflow: hidden;
-    }
-
     .menu-category-buttons {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       padding-left: 50%;
+    }
+    .menu-title {
+      font-size: 2em;
+      text-align: center;
+      overflow: hidden;
     }
 
     .menu-category-select {
@@ -327,6 +326,10 @@
       flex: 0 0 auto;
       margin-right: 10px;
       font-size: 1em;
+    }
+    .items-container {
+      padding: 10px;
+      margin: 0;
     }
 
     .menu-list {
